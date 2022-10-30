@@ -1,6 +1,7 @@
 export interface Professor{
     id: number;
-    nome: string;
-    descricao: string;
-    valor_hora: number;
+    name: string;
+    picture: string;
+    description: string;
+    hour_value: number;
 }

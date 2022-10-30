@@ -1,47 +1,33 @@
 import { Button } from "@mui/material"
-import { Descricao, Foto, Informacoes, ItemLista, ListaStyled, Nome, Valor } from "./lista.style"
+import { Professor } from "../../@types/professor"
+import { FormataService } from "../../services/FormataService"
+import { Descricao, Foto, Informacoes, ItemLista, ListaStyled, ListaVazia, Nome, Valor } from "./lista.style"
+interface ListaProps {
+    professores: Professor[],
+}
 
-const Lista = () => {
+const Lista = (props: ListaProps) => {
     return (
-        <ListaStyled>
-            <ItemLista>
-                <Foto src="https://github.com/elton-fonseca.png"></Foto>
-                <Informacoes>
-                    <Nome>Elton Fonseca</Nome>
-                    <Valor>R$ 100,00</Valor>
-                    <Descricao>Aulas de Programação, pode te ensinar sobre React e TypeScript</Descricao>
-                    <Button sx={{ width: '80%' }}>Marcar Aula com Elton</Button>
-                </Informacoes>
-            </ItemLista>
-            <ItemLista>
-                <Foto src="https://github.com/dilmoraes.png"></Foto>
-                <Informacoes>
-                    <Nome>Diego Laudelino</Nome>
-                    <Valor>R$ 110,00</Valor>
-                    <Descricao>Aulas de Programação, pode te ensinar sobre Quasar e Flutter</Descricao>
-                    <Button sx={{ width: '80%' }}>Marcar Aula com Diego</Button>
-                </Informacoes>
-            </ItemLista>
-            <ItemLista>
-                <Foto src="https://github.com/flaviojoe.png"></Foto>
-                <Informacoes>
-                    <Nome>Flávio Moraes</Nome>
-                    <Valor>R$ 120,00</Valor>
-                    <Descricao>Aulas de Banco de Dados, pode te ensinar sobre SQL, NoSQL, etc.</Descricao>
-                    <Button sx={{ width: '80%' }}>Marcar Aula com Flávio</Button>
-                </Informacoes>
-            </ItemLista>
-            <ItemLista>
-                <Foto src="https://github.com/elton-fonseca.png"></Foto>
-                <Informacoes>
-                    <Nome>Elton Fonseca</Nome>
-                    <Valor>R$ 100,00</Valor>
-                    <Descricao>Aulas de Programação, pode te ensinar sobre React e TypeScript</Descricao>
-                    <Button sx={{ width: '80%' }}>Marcar Aula com Elton</Button>
-                </Informacoes>
-            </ItemLista>
-        </ListaStyled>
+        <div>
+            {props.professores.length > 0 ? (
+                <ListaStyled>
+                    {props.professores.map(professor => (
+                        <ItemLista key={professor.id}>
+                            <Foto src={professor.picture}></Foto>
+                            <Informacoes>
+                                <Nome>{professor.name}</Nome>
+                                <Valor>{FormataService.valMonet(professor.hour_value)}</Valor>
+                                <Descricao>{FormataService.limiteText(professor.description, 82)}</Descricao>
+                                <Button sx={{ width: '80%' }}>Marcar Aula com {professor.name}</Button>
+                            </Informacoes>
+                        </ItemLista>
+                    ))}
+                </ListaStyled>
+            ) : (
+                <ListaVazia>Dados não encontrados</ListaVazia>
+            )}
+        </div>
     )
 }
 
-export default Lista
+export default Lista;

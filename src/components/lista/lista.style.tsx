@@ -14,15 +14,20 @@ export const ListaStyled = styled('ul')`
         grid-template-columns: 1fr;
         gap: ${({theme}) => theme.spacing(8)};
     };
-
+    
     `;
 
 export const ItemLista = styled('li')`
     list-style: none;
-`;
+    `;
 
 export const Foto = styled('img')`
     width: 100%;
+    `;
+
+export const ListaVazia = styled('h2')`
+    text-align: center;
+    padding: ${({theme}) => theme.spacing(20)};
 `;
 
 
