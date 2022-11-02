@@ -30,7 +30,7 @@ const Cadastro: NextPage = () => {
                         texto={'(Podem haver mais de um cadastro por professor desde que a descrição seja diferente.)'}
                     ></Titulo>
                 </Stack>
-                <Box sx={{ mx:15}}>
+                <Box sx={{ mx:0}}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField 
@@ -70,7 +70,6 @@ const Cadastro: NextPage = () => {
                                 fullWidth
                                 autoComplete="off"
                                 rows={4}
-                                maxRows={4}
                                 value={desc}
                                 onChange={(e) => setDesc(e.target.value)}
                             />

@@ -13,7 +13,7 @@ export const Logo = styled('img')`
 `;
 
 export const ContainerHead = styled('div')`
-    width: 900px;
+    /* width: 900px; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
