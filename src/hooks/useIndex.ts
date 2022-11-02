@@ -28,8 +28,8 @@ export function useIndex() {
                     "name": nome,
                     "email": email
                 }).then(() => {
-                    setSelecProf(null);
                     setMsg('Cadastro realizado com sucesso.');
+                    setSelecProf(null);
                 }).catch((error) => {
                     setMsg(error.response?.data.message);
                 });

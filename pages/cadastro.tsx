@@ -1,5 +1,6 @@
 import { Box, Button, Container, Dialog, Grid, Snackbar, Stack, TextField } from "@mui/material";
 import { NextPage } from "next";
+import Titulo from "../src/components/outros/titulo";
 import { useCadastro } from "../src/hooks/useCadastro";
 
 const Cadastro: NextPage = () => {
@@ -13,12 +14,23 @@ const Cadastro: NextPage = () => {
         foto,
         setFoto,
         msg,
-        setMsg
+        setMsg,
+        insereProf
     } = useCadastro();
     return (
         <div>
-            <Container sx={{ px:10, backgroundColor: 'secondary.main'}}>
-                <Box sx={{ mx:20, margin: '10px auto'}}>
+            <Container sx={{ px:5}}>
+                <Stack sx={{ textAlign: 'center'}}>
+                    <Titulo 
+                        opcao={1}
+                        texto={'Formulário de cadastro de professores'}
+                    ></Titulo>
+                    <Titulo 
+                        opcao={2}
+                        texto={'(Podem haver mais de um cadastro por professor desde que a descrição seja diferente.)'}
+                    ></Titulo>
+                </Stack>
+                <Box sx={{ mx:15}}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <TextField 
@@ -70,7 +82,7 @@ const Cadastro: NextPage = () => {
                         spacing={2}
                         sx={{mt: 5}}>
                         <Button >Cancelar</Button>
-                        <Button >Salvar</Button>
+                        <Button onClick={() => insereProf()} >Salvar</Button>
                     </Stack>
 
                     <Snackbar 

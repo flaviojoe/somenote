@@ -1,7 +1,7 @@
 import { Box, Checkbox, FormControlLabel } from "@mui/material";
 import { Aula } from "../../@types/aula"
 import { ListaVazia } from "../lista/lista.style";
-import { ColunaTable, GrupoBody, GrupoHead, HeadTable, LinhaTable, PrinTable, TableConteiner } from "./tabela.style"
+import { ColunaTable, GrupoBody, GrupoFoot, GrupoHead, HeadTable, LinhaTable, PrinTable, TableConteiner } from "./tabela.style"
 
 interface TabelaProps {
     aulas: Aula[],
@@ -29,7 +29,7 @@ const Tabela = (props: TabelaProps) => {
                                     /> */}
                                     SELEÇÃO
                                 </HeadTable>
-                                <HeadTable>NOME</HeadTable>
+                                <HeadTable>ALUNO</HeadTable>
                                 <HeadTable>E-MAIL</HeadTable>
                                 <HeadTable>PROFESSOR(A)</HeadTable>
                             </LinhaTable>
@@ -38,9 +38,9 @@ const Tabela = (props: TabelaProps) => {
                             {props.aulas.map(aula => (
                                 <LinhaTable key={aula.id}>
                                     <ColunaTable>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }} >
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', ml: 2 }} >
                                             <FormControlLabel
-                                                label={aula.id}
+                                                label={''}
                                                 control={
                                                     <Checkbox onChange={() =>  props.controlChk(aula)} />
                                                 } 
@@ -53,6 +53,7 @@ const Tabela = (props: TabelaProps) => {
                                 </LinhaTable>
                             ))}
                         </GrupoBody>
+                        <GrupoFoot></GrupoFoot>
                     </PrinTable>
                 </TableConteiner>
             ) : (

@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { NextPage } from "next"
 import Tabela from "../src/components/tabela/tabela";
+import { TituloPage } from "../src/components/tabela/tabela.style";
 import { useAulas } from "../src/hooks/useAulas";
 
 const Matricula: NextPage = () => {
@@ -12,11 +13,13 @@ const Matricula: NextPage = () => {
 
     return (
         <div>
-            <Box sx={{ px:8 }}>
+            <Box sx={{ px:7, mx:7 }}>
+                <TituloPage>Alunos matriculados</TituloPage>
                 <Tabela 
                     aulas={listaAula}
                     controlChk={(aula) => setChecked(aula)}
                 ></Tabela>
+                <br />
             </Box>
         </div>
     )

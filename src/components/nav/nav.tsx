@@ -16,7 +16,11 @@ const Menu = (props: MenuProps) => {
                 <IconButton onClick={() => props.toogleMenu(!props.open)}>
                     <MenuIcon fontSize='large' />
                 </IconButton>
-                <Drawer open={props.open} onClose={() => props.toogleMenu(false)}>
+                <Drawer 
+                    open={props.open} 
+                    onClose={() => props.toogleMenu(false)}
+                    onClick={() => props.toogleMenu(false)}
+                >
                     <Icone>
                         <Link href="/">
                             <Avatar>

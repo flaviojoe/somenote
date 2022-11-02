@@ -21,7 +21,7 @@ const Lista = (props: ListaProps) => {
                                 <Descricao>{FormataService.limiteText(professor.description, 82)}</Descricao>
                                 <Button 
                                     onClick={() => props.onSelectProf(professor)}
-                                    sx={{ width: '80%' }}>Marcar Aula com {professor.name.split(' ',1)[0]}
+                                    sx={{ width: '70%' }}>Marcar Aula com {professor.name.split(' ',1)[0]}
                                 </Button>
                             </Informacoes>
                         </ItemLista>
