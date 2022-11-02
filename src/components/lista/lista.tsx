@@ -4,6 +4,7 @@ import { FormataService } from "../../services/FormataService"
 import { Descricao, Foto, Informacoes, ItemLista, ListaStyled, ListaVazia, Nome, Valor } from "./lista.style"
 interface ListaProps {
     professores: Professor[],
+    onSelectProf: (professor: Professor) => void
 }
 
 const Lista = (props: ListaProps) => {
@@ -18,7 +19,10 @@ const Lista = (props: ListaProps) => {
                                 <Nome>{professor.name}</Nome>
                                 <Valor>{FormataService.valMonet(professor.hour_value)}</Valor>
                                 <Descricao>{FormataService.limiteText(professor.description, 82)}</Descricao>
-                                <Button sx={{ width: '80%' }}>Marcar Aula com {professor.name}</Button>
+                                <Button 
+                                    onClick={() => props.onSelectProf(professor)}
+                                    sx={{ width: '80%' }}>Marcar Aula com {professor.name.split(' ',1)[0]}
+                                </Button>
                             </Informacoes>
                         </ItemLista>
                     ))}

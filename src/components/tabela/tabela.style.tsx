@@ -14,20 +14,28 @@ export const PrinTable = styled('table')`
 `;
 
 export const HeadTable = styled('th')`
-    border: 1px solid ${({theme}) => theme.palette.secondary.main};
+    border: 1px solid #555;
     border-collapse: collapse;
     padding: 10px 30px 10px 30px;
     background-color: #ccc;
 `;
 
 export const LinhaTable = styled('tr')`
-    border: 1px solid ${({theme}) => theme.palette.secondary.main};
+    border: 1px solid #555;
     border-collapse: collapse;
     padding: 10px 30px 10px 30px;
     `;
 
 export const ColunaTable = styled('td')`
-    border: 1px solid ${({theme}) => theme.palette.secondary.main};
+    border: 1px solid #555;
     border-collapse: collapse;
     padding: 10px 30px 10px 30px;
+`;
+
+export const GrupoHead = styled('thead')`
+
+`;
+
+export const GrupoBody = styled('tbody')`
+
 `;

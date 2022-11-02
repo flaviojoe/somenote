@@ -4,12 +4,19 @@ import Tabela from "../src/components/tabela/tabela";
 import { useAulas } from "../src/hooks/useAulas";
 
 const Matricula: NextPage = () => {
-    const {listaAula} = useAulas();
+    const {
+        listaAula,
+        checked,
+        setChecked,
+    } = useAulas();
 
     return (
         <div>
-            <Box>
-                <Tabela aulas={listaAula}></Tabela>
+            <Box sx={{ px:8 }}>
+                <Tabela 
+                    aulas={listaAula}
+                    controlChk={(aula) => setChecked(aula)}
+                ></Tabela>
             </Box>
         </div>
     )

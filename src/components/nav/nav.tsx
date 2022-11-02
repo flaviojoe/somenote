@@ -26,10 +26,12 @@ const Menu = (props: MenuProps) => {
                         <MenuVazio>Opções</MenuVazio>
                     </Icone>
                     <ListaMenu>
+                        <Link href={'/cadastro'}>
                         <ListItem button >
                             <ListItemIcon><PersonAdd /></ListItemIcon>
                             <ListItemText primary='Adicionar professor' />
                         </ListItem>
+                        </Link>
                         <Link href="/aulas">
                             <ListItem button >
                                 <ListItemIcon><Article /></ListItemIcon>

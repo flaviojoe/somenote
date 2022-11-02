@@ -2,7 +2,7 @@ import { styled } from "@mui/material";
 
 export const ListaStyled = styled('ul')`
     width: 100%; 
-    max-width: 780px;
+    max-width: 727px;
     margin: 0 auto;
     padding: ${({theme}) => theme.spacing(10, 2, 10, 2)};
     
@@ -31,7 +31,9 @@ export const ListaVazia = styled('h2')`
 `;
 
 
-export const Informacoes = styled('div')``;
+export const Informacoes = styled('div')`
+    padding: 2;
+`;
 
 
 export const Nome = styled('h3')`
