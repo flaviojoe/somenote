@@ -89,7 +89,6 @@ const Cadastro: NextPage = () => {
                         open={msg.length > 0} 
                         autoHideDuration={3000}
                         onClose={() => setMsg('')}
-                        anchorOrigin={{vertical:'bottom', horizontal:'right'}}
                     />
                 </Box>
             </Container>
