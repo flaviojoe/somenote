@@ -1,12 +1,7 @@
 import { styled } from "@mui/system";
 
 export const TableConteiner = styled('div')`
-    width: 100vw;
-    min-width: 300px;
-    margin-left: auto;
-    margin-right: auto; 
-    text-align: center;
-    padding: ${({theme}) => theme.spacing(2,2,2,2)};
+    width: 100%;
 `;
 
 export const PrinTable = styled('table')`
@@ -44,11 +39,4 @@ export const GrupoBody = styled('tbody')`
 
 export const GrupoFoot = styled('tfoot')`
 
-`;
-
-export const TituloPage = styled('h2')`
-    width: 500px;
-    flex-direction: row;
-    text-align: center;
-    justify-items: center;
 `;

@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { NextPage } from "next"
+import { ContainerMain } from "../src/components/main/main.style";
 import Titulo from "../src/components/outros/titulo";
 import Tabela from "../src/components/tabela/tabela";
 import { useAulas } from "../src/hooks/useAulas";
@@ -13,7 +14,7 @@ const Matricula: NextPage = () => {
 
     return (
         <div>
-            <Box sx={{ px:2, mx:2 }}>
+            <ContainerMain >
                 <Titulo
                     opcao={1}
                     texto="Alunos matriculados"
@@ -23,7 +24,7 @@ const Matricula: NextPage = () => {
                     controlChk={(aula) => setChecked(aula)}
                 ></Tabela>
                 <br />
-            </Box>
+            </ContainerMain>
         </div>
     )
 }

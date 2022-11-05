@@ -1,10 +1,10 @@
 import { styled } from "@mui/material";
 
 export const TituloPage = styled('h3')`
-    margin: 5px 0px 0px 3px;
+    margin-bottom: 5px;
 `;
 
 export const SubTitulo = styled('p')`
     font-size: 13px;
-    margin:5px 0px 20px 0px;
+    margin-top: 2px;
 `;

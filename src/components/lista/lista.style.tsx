@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 
 export const ListaStyled = styled('ul')`
-    padding: ${({theme}) => theme.spacing(10, 2, 10, 2)};
+    padding: ${({theme}) => theme.spacing(10, 2)};
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: ${({theme}) => theme.spacing(9)};

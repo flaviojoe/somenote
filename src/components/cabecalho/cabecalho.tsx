@@ -1,19 +1,15 @@
 import Link from "next/link";
-import { CabecalhoContainer, ContainerHead, Logo } from "./cabecalho.style";
+import { CabecalhoContainer, Logo } from "./cabecalho.style";
 
 const Cabecalho = () => {
     return (
-        <ContainerHead>
-            <CabecalhoContainer>
-                <Link href="/">
-                    <div>
-                        <Logo src="/images/myteacher.png" />
-                    </div>
-                </Link>
+        <CabecalhoContainer>
+            <Link href="/">
+                <Logo src="/images/myteacher.png" />
+            </Link>
 
-                <p>Encontre o professor perfeito!</p>
-            </CabecalhoContainer>
-        </ContainerHead>
+            <p>Encontre o professor perfeito!</p>
+        </CabecalhoContainer>
     )
 }
 
