@@ -6,6 +6,7 @@ import { ApiService } from "../services/ApiService";
 export function useAulas() {
     const [listaAula, setListaAula] = useState<Aula[]>([]);
     const [checked, setChecked] = useState<Aula | null>(null);
+    const [selId, setSelId] = useState([]);
 
     useEffect(() => {
         ApiService.get('aulas').then((resposta) => {
@@ -15,7 +16,7 @@ export function useAulas() {
 
     useEffect(() => {
         alterarVal();
-    },[alterarVal, checked]);
+    },[checked]);
 
     function alterarVal(){
         // let index = checked.findIndex(i => i === id);
@@ -27,14 +28,31 @@ export function useAulas() {
         // }
         // setChecked(arrSelec);
         //alert('valor de checked:' + {checked})
-        //console.log('funfou ' + checked?.name + ' id ' + checked?.id);
         
+        let index = selId.findIndex(item => item === checked?.id);
+            let arrSelec = [...selId];
+            console.log('inicio array: ' + arrSelec + ' index ' + index);
+            if (index !== -1) {
+                console.log('se estiver no array: ' + arrSelec);
+                console.log('posicao:' + index);
+                let newList = arrSelec.filter((item) => item !== index);
+                setSelId(newList);
+            } else {
+                console.log('senao: ' + arrSelec);
+                arrSelec.push(checked?.id);
+                setSelId(arrSelec);
+            }
+            console.log('funfou ' + selId + ' index ' + index);
     }
+
+
 
     return {
         listaAula,
         checked,
         setChecked,
-        alterarVal
+        alterarVal,
+        selId,
+        setSelId
     }
 }

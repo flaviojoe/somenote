@@ -18,7 +18,7 @@ const tema = createTheme({
             styleOverrides: {
                 root: {
                     color: '#FFF',
-                    borderRadius: '20px',
+                    borderRadius: '10px',
                     backgroundColor: '#F52273',
                     textTransform: 'none',
                     fontWeight: 'bold',

@@ -16,7 +16,9 @@ const Cadastro: NextPage = () => {
         setFoto,
         msg,
         setMsg,
-        insereProf
+        insereProf,
+        campoErro,
+        setCampoErro
     } = useCadastro();
     return (
         <ContainerMain>
@@ -38,9 +40,11 @@ const Cadastro: NextPage = () => {
                             type="text"
                             fullWidth
                             autoComplete="off"
+                            helperText={campoErro==="name" ? msg : ""}
+                            error={campoErro==="name"}
                             value={nomeProf}
                             onChange={(e) => setNomeProf(e.target.value)}
-                        />
+                            />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField 
@@ -49,9 +53,11 @@ const Cadastro: NextPage = () => {
                             fullWidth
                             autoComplete="off"
                             placeholder="Tipo link http://..."
+                            helperText={campoErro==="picture" ? msg : ""}
+                            error={campoErro==="picture"}
                             value={foto}
                             onChange={(e) => setFoto(e.target.value)}
-                        />
+                            />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField 
@@ -59,9 +65,11 @@ const Cadastro: NextPage = () => {
                             type="number"
                             fullWidth
                             autoComplete="off"
+                            helperText={campoErro==="hour_value" ? msg : ""}
+                            error={campoErro==="hour_value"}
                             value={valor}
                             onChange={(e) => setValor(e.target.value)}
-                        />
+                            />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField 
@@ -69,10 +77,12 @@ const Cadastro: NextPage = () => {
                             multiline
                             fullWidth
                             autoComplete="off"
+                            helperText={campoErro==="description" ? msg : ""}
+                            error={campoErro==="description"}
                             rows={4}
                             value={desc}
                             onChange={(e) => setDesc(e.target.value)}
-                        />
+                            />
                     </Grid>
                 </Grid>
                 <Stack direction="row"

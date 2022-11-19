@@ -7,6 +7,7 @@ export function useCadastro(){
     const [valor, setValor] = useState('');
     const [foto, setFoto] = useState('');
     const [msg, setMsg] = useState('');
+    const [campoErro, setCampoErro] = useState('')
 
     function validarDados(){
         return nomeProf.length > 0 && desc.length > 0 && valor.length > 0 && foto.length > 0;
@@ -25,6 +26,7 @@ export function useCadastro(){
                     limparForm();
                 }).catch((error) => {
                     setMsg(error.response?.data.message);
+                    setCampoErro(error.response?.data.campo)
                 });
             } else {
                 setMsg('Preencha os dados corretamente.');
@@ -50,7 +52,9 @@ export function useCadastro(){
         setFoto,
         msg,
         setMsg,
-        insereProf
+        insereProf,
+        campoErro,
+        setCampoErro
     }
 
 }
