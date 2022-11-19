@@ -34,8 +34,9 @@ export function useAulas() {
             console.log('inicio array: ' + arrSelec + ' index ' + index);
             if (index !== -1) {
                 console.log('se estiver no array: ' + arrSelec);
+                console.log('valor encontrado: ' + arrSelec[index])
                 console.log('posicao:' + index);
-                let newList = arrSelec.filter((item) => item !== index);
+                let newList = arrSelec.filter((item) => item !== arrSelec[index]);
                 setSelId(newList);
             } else {
                 console.log('senao: ' + arrSelec);
